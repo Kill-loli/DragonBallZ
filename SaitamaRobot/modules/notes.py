@@ -163,9 +163,7 @@ def get(update, context, notename, show_none=True, no_format=False):
             except BadRequest as excp:
                 if excp.message == "Entity_mention_user_invalid":
                     message.reply_text(
-                        "Looks like you tried to mention someone I've never seen before. If you really "
-                        "want to mention them, forward one of their messages to me, and I'll be able "
-                        "to tag them!")
+                        "uhm..Looks like you tried to mention someone I've never seen before!")
                 elif FILE_MATCHER.match(note.value):
                     message.reply_text(
                         "This note was an incorrectly imported file from another bot - I can't use "
@@ -217,7 +215,7 @@ def slash_get(update: Update, context: CallbackContext):
         note_name = str(noteid).strip(">").split()[1]
         get(update, context, note_name, show_none=False)
     except IndexError:
-        update.effective_message.reply_text("Wrong Note ID 😾")
+        update.effective_message.reply_text("Bruh, Wrong Note ID 😶")
 
 
 @run_async
