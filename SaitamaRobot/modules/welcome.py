@@ -187,7 +187,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "Whoa! A member of the Heroes Association just joined!",
+                    "Whoa! A member of @Dragon_Ball_Chat just joined!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -495,7 +495,7 @@ def left_member(update: Update, context: CallbackContext):
             # Give the devs a special goodbye
             elif left_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "See you later at the Hero's Association!",
+                    "See you later at @Dragon_Ball_Chat!",
                     reply_to_message_id=reply,
                 )
                 return
@@ -808,7 +808,7 @@ def clean_welcome(update: Update, context: CallbackContext) -> str:
         clean_pref = sql.get_clean_pref(chat.id)
         if clean_pref:
             update.effective_message.reply_text(
-                "I should be deleting welcome messages up to two days old.")
+                "I should be deleting welcome messages up to two days old!")
         else:
             update.effective_message.reply_text(
                 "I'm currently not deleting old welcome messages!")
