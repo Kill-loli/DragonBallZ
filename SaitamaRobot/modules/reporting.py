@@ -45,8 +45,7 @@ def report_setting(update: Update, context: CallbackContext):
             if args[0] in ("yes", "on"):
                 sql.set_chat_setting(chat.id, True)
                 msg.reply_text(
-                    "Turned on reporting! Admins who have turned on reports will be notified when /report "
-                    "or @admin is called.")
+                    "Turned on reports! Admins who have turned on reports will be notified when someone summon them with /report or @admin command.")
 
             elif args[0] in ("no", "off"):
                 sql.set_chat_setting(chat.id, False)
