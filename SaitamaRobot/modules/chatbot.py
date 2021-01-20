@@ -38,7 +38,7 @@ def add_chat(update: Update, context: CallbackContext):
         ses_id = str(ses.id)
         expires = str(ses.expires)
         sql.set_ses(chat.id, ses_id, expires)
-        msg.reply_text("AI successfully enabled for this chat!")
+        msg.reply_text("AI successfully enabled for this chat, now you can chat with me 😎😎!")
         message = (
             f"<b>{html.escape(chat.title)}:</b>\n"
             f"#AI_ENABLED\n"
@@ -46,7 +46,7 @@ def add_chat(update: Update, context: CallbackContext):
         )
         return message
     else:
-        msg.reply_text("AI is already enabled for this chat!")
+        msg.reply_text("Bruh, AI is already enabled for this chat 😐!")
         return ""
 
 
