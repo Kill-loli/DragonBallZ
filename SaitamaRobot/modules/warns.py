@@ -37,12 +37,12 @@ def warn(user: User,
          message: Message,
          warner: User = None) -> str:
     if is_user_admin(chat, user.id):
-        # message.reply_text("Damn admins, They are too far to be One Punched!")
+        # message.reply_text("Damn these admins,  We cannot warn them!")
         return
 
     if user.id in TIGERS:
         if warner:
-            message.reply_text("Tigers cant be warned.")
+            message.reply_text("Tigers can't be warned.")
         else:
             message.reply_text(
                 "Tiger triggered an auto warn filter!\n I can't warn tigers but they should avoid abusing this."
